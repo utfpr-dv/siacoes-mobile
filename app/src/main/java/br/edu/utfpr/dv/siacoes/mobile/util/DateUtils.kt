@@ -13,4 +13,12 @@ class DateUtils {
         }
     }
 
+    fun formatDateTime(date : Date?) : String {
+        if(date == null) {
+            return ""
+        } else {
+            return SimpleDateFormat("dd/MM/yyyy HH:mm").format(date)
+        }
+    }
+
 }

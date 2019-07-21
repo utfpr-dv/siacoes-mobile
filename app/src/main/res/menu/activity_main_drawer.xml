@@ -20,11 +20,14 @@
                 android:id="@+id/nav_siget"
                 android:icon="@drawable/ic_menu_siget"
                 android:title="@string/menu_siget"/>
-
         <item
                 android:id="@+id/nav_jury"
                 android:icon="@drawable/ic_menu_users"
                 android:title="@string/menu_student_jury"/>
+        <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_menu_about"
+                android:title="@string/menu_about"/>
     </group>
 
     <item android:title="@string/menu_session">

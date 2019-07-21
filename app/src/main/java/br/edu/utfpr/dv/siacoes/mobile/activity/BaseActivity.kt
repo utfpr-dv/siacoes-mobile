@@ -173,6 +173,10 @@ abstract class BaseActivity(val subtitle : String?, val hideMenu : Boolean, val 
                 val intent = Intent(this, CalendarActivity::class.java)
                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
             }
+            R.id.nav_about -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+            }
             R.id.nav_logoff -> {
                 val PREFS_FILENAME = "br.edu.utfpr.dv.siacoes.prefs"
                 val masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
