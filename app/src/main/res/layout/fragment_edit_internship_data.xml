@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="15dp">
+
+    <TextView
+            android:text="Orientador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/spinner_supervisor"/>
+    <Spinner
+            android:id="@+id/spinner_supervisor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:spinnerMode="dialog"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    <TextView
+            android:text="Empresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/spinner_company"/>
+    <Spinner
+            android:id="@+id/spinner_company"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:spinnerMode="dialog"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    <TextView
+            android:text="Supervisor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/spinner_company_supervisor"/>
+    <Spinner
+            android:id="@+id/spinner_company_supervisor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:spinnerMode="dialog"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView
+                    android:text="Tipo de Estágio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/spinner_type"/>
+
+            <TextView
+                    android:text="Horas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/text_total_hours"/>
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <Spinner
+                    android:id="@+id/spinner_type"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:spinnerMode="dialog"
+                    android:focusable="false"
+                    android:clickable="false"/>
+
+            <EditText
+                    android:id="@+id/text_total_hours"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="false"/>
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView
+                    android:text="Data de Início"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/text_start_date"/>
+
+            <TextView
+                    android:text="Data de Término"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/text_end_date"/>
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <EditText
+                    android:id="@+id/text_start_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="false"/>
+
+            <EditText
+                    android:id="@+id/text_end_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="false"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

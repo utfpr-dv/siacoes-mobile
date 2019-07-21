@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="15dp">
+
+    <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView
+                    android:text="Parecer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/spinner_feedback"/>
+
+            <TextView
+                    android:text="Data do Parecer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/text_feedback_date"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <Spinner
+                    android:id="@+id/spinner_feedback"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:spinnerMode="dialog"
+                    android:focusable="false"
+                    android:clickable="false"/>
+
+            <EditText
+                    android:id="@+id/text_feedback_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="false"/>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+            android:text="Validado por"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/text_feedback_user"/>
+    <EditText
+            android:id="@+id/text_feedback_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    <TextView
+            android:text="Observações do Parecerista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/text_feedback_comments"/>
+    <EditText
+            android:id="@+id/text_feedback_comments"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+            android:gravity="start|top"
+            android:focusable="false"
+            android:clickable="false"/>
+
+</LinearLayout>

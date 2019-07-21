@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_calendar"
+                android:icon="@drawable/ic_menu_calendar"
+                android:title="@string/menu_calendar"/>
+        <item
+                android:id="@+id/nav_sigac"
+                android:icon="@drawable/ic_menu_sigac"
+                android:title="@string/menu_sigac"/>
+        <item
+                android:id="@+id/nav_siges"
+                android:icon="@drawable/ic_menu_siges"
+                android:title="@string/menu_siges"/>
+        <item
+                android:id="@+id/nav_siget"
+                android:icon="@drawable/ic_menu_siget"
+                android:title="@string/menu_siget"/>
+
+        <item
+                android:id="@+id/nav_jury"
+                android:icon="@drawable/ic_menu_users"
+                android:title="@string/menu_student_jury"/>
+    </group>
+
+    <item android:title="@string/menu_session">
+        <menu>
+            <item
+                    android:id="@+id/nav_logoff"
+                    android:icon="@drawable/ic_menu_logout"
+                    android:title="@string/menu_logoff"/>
+        </menu>
+    </item>
+
+</menu>

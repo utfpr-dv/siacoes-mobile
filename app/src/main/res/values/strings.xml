@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SIACOES</string>
+    <string name="navigation_drawer_open">Abrir menu</string>
+    <string name="navigation_drawer_close">Fechar menu</string>
+    <string name="nav_header_title">Nome</string>
+    <string name="nav_header_subtitle">email@email.com</string>
+    <string name="nav_header_desc">Menu</string>
+    <string name="action_settings">Configurações</string>
+
+    <string name="menu_calendar">Agenda de Bancas</string>
+    <string name="menu_sigac">Atividades Complementares</string>
+    <string name="menu_siges">Estágios</string>
+    <string name="menu_siget">TCC</string>
+    <string name="menu_student_jury">Bancas que Assisti</string>
+    <string name="menu_session">Sessão</string>
+    <string name="menu_logoff">Logoff</string>
+    <string name="title_activity_login">Acesso ao SIACOES</string>
+    <string name="prompt_login">Login</string>
+    <string name="prompt_password">Senha</string>
+    <string name="switch_stay_connected">Permanecer conectado</string>
+    <string name="action_sign_in">Acessar</string>
+    <string name="action_sign_in_short">Acessar</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Usuário ou senha incorretos"</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_activity_submission_sumary">Resumo</string>
+    <string name="tab_text_activity_submission_list">Submissões</string>
+    <string name="tab_text_internship">Meus Estágios</string>
+    <string name="tab_text_activity">Atividade</string>
+    <string name="tab_text_comments">Observações</string>
+    <string name="tab_text_feedback">Parecer</string>
+    <string name="tab_text_internship2">Estágio</string>
+</resources>
