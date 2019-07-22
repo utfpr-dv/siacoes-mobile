@@ -59,4 +59,14 @@ class ActivitySubmissionClient {
         }
     }
 
+    fun minimumAchieved(items : List<ActivitySubmissionSummary>, minimumScore : Int) : Boolean {
+        for(item in items) {
+            if(item.total < item.minimum) {
+                return false
+            }
+        }
+
+        return (this.getTotalScore(items) >= minimumScore)
+    }
+
 }

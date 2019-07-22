@@ -10,4 +10,7 @@ interface AttendanceService {
     @GET("attendance/list/{idproposal}/{idsupervisor}/{stage}")
     fun list(@Path("idproposal") idProposal: Int, @Path("idsupervisor") idSupervisor: Int, @Path("stage") stage: Int) : Call<List<Attendance>>
 
+    @GET("attendance/find/{idattendance}")
+    fun find(@Path("idattendance") idAttendance: Int) : Call<Attendance>
+
 }

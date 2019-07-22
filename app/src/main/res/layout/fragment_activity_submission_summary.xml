@@ -44,6 +44,13 @@
                         android:padding="10dp"
                         android:orientation="vertical">
 
+                    <ProgressBar
+                            android:id="@+id/progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:max="1000"/>
+
                     <TextView
                             android:id="@+id/score"
                             android:layout_width="match_parent"

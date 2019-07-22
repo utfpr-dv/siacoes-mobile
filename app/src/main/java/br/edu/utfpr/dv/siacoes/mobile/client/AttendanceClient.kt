@@ -20,4 +20,18 @@ class AttendanceClient {
         }))
     }
 
+    fun find(idAttendance: Int, success: (Attendance) -> Unit,
+             failure: (throwable: Throwable) -> Unit) {
+        val call = RetrofitInitializer().attendanceService().find(idAttendance)
+        call.enqueue(callback({ response ->
+            response?.body()?.let {
+                success(it)
+            }
+        }, { throwable ->
+            throwable?.let {
+                failure(it)
+            }
+        }))
+    }
+
 }

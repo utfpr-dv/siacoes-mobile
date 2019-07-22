@@ -10,4 +10,7 @@ interface InternshipService {
     @GET("internship/list/{iddepartment}")
     fun list(@Path("iddepartment") idDepartment: Int) : Call<List<Internship>>
 
+    @GET("internship/find/{idinternship}")
+    fun find(@Path("idinternship") idDepartment: Int) : Call<Internship>
+
 }

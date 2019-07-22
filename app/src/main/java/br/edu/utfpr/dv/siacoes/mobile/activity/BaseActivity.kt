@@ -254,15 +254,15 @@ abstract class BaseActivity(val subtitle : String?, val hideMenu : Boolean, val 
                     Session().setUserDepartment(departments[0])
                 }
 
-                findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserDepartment)?.text = Session().getUserDepartment()?.department?.name
-                findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserCampus)?.text = Session().getUserDepartment()?.department?.campus?.name
+                findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserDepartment)?.text = Session().getDepartmentName()
+                findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserCampus)?.text = Session().getCampusName()
             }, {
-                findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserDepartment)?.text = Session().getUserDepartment()?.department?.name
-                findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserCampus)?.text = Session().getUserDepartment()?.department?.campus?.name
+                findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserDepartment)?.text = Session().getDepartmentName()
+                findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserCampus)?.text = Session().getCampusName()
             })
         } else {
-            findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserDepartment)?.text = Session().getUserDepartment()?.department?.name
-            findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserCampus)?.text = Session().getUserDepartment()?.department?.campus?.name
+            findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserDepartment)?.text = Session().getDepartmentName()
+            findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserCampus)?.text = Session().getCampusName()
         }
     }
 

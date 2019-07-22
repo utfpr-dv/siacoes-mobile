@@ -1,9 +1,12 @@
 package br.edu.utfpr.dv.siacoes.mobile.fragment
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
@@ -16,6 +19,7 @@ import br.edu.utfpr.dv.siacoes.mobile.adapter.ActivitySubmissionSummaryAdapter
 import br.edu.utfpr.dv.siacoes.mobile.client.ActivitySubmissionClient
 import br.edu.utfpr.dv.siacoes.mobile.model.ActivitySubmissionSummary
 import com.google.android.material.snackbar.Snackbar
+import kotlin.math.roundToInt
 
 class ActivitySubmissionSummaryFragment : Fragment() {
 
@@ -44,8 +48,17 @@ class ActivitySubmissionSummaryFragment : Fragment() {
         val layoutManager = LinearLayoutManager(this.context!!, RecyclerView.VERTICAL, false)
         recyclerView?.layoutManager = layoutManager
 
-        activity?.findViewById<TextView>(R.id.score)?.text = ActivitySubmissionClient().getTotalScore(submissionSummary).toString() + " Ponto(s)"
-        activity?.findViewById<TextView>(R.id.situation)?.text = ActivitySubmissionClient().getSituation(submissionSummary, 70)
+        val totalScore : Double = ActivitySubmissionClient().getTotalScore(submissionSummary)
+        activity?.findViewById<TextView>(R.id.score)?.text = totalScore.toString() + " ponto(s)"
+        activity?.findViewById<TextView>(R.id.situation)?.text = ActivitySubmissionClient().getSituation(submissionSummary, Session().getSigacConfig()?.minimumScore!!.toInt())
+
+        val progressBar = activity?.findViewById<ProgressBar>(R.id.progressBar)
+        progressBar?.progress = (totalScore * 10).roundToInt()
+        if(ActivitySubmissionClient().minimumAchieved(submissionSummary, Session().getSigacConfig()?.minimumScore!!.toInt())) {
+            progressBar?.progressTintList = ColorStateList.valueOf(Color.GREEN)
+        } else {
+            progressBar?.progressTintList = ColorStateList.valueOf(Color.RED)
+        }
 
         activity?.findViewById<CardView>(R.id.card_summary)?.visibility = View.VISIBLE
 

@@ -20,4 +20,18 @@ class InternshipClient {
         }))
     }
 
+    fun find(idInternship: Int, success: (Internship) -> Unit,
+             failure: (throwable: Throwable) -> Unit) {
+        val call = RetrofitInitializer().internshipService().find(idInternship)
+        call.enqueue(callback({ response ->
+            response?.body()?.let {
+                success(it)
+            }
+        }, { throwable ->
+            throwable?.let {
+                failure(it)
+            }
+        }))
+    }
+
 }
