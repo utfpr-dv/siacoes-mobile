@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="15dp">
+
+    <TextView
+            android:text="Título"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/text_title"/>
+    <EditText
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    <TextView
+            android:text="Subárea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/text_area"/>
+    <EditText
+            android:id="@+id/text_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    <TextView
+            android:text="Orientador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/spinner_supervisor"/>
+    <Spinner
+            android:id="@+id/spinner_supervisor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:spinnerMode="dialog"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    <TextView
+            android:text="Coorientador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/spinner_cosupervisor"/>
+    <Spinner
+            android:id="@+id/spinner_cosupervisor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:spinnerMode="dialog"
+            android:focusable="false"
+            android:clickable="false"/>
+
+    <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView
+                    android:text="Semestre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/spinner_semester"/>
+
+            <TextView
+                    android:text="Ano"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/text_year"/>
+
+            <TextView
+                    android:text="Data de Registro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/text_submission_date"/>
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <Spinner
+                    android:id="@+id/spinner_semester"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:spinnerMode="dialog"
+                    android:focusable="false"
+                    android:clickable="false"/>
+
+            <EditText
+                    android:id="@+id/text_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:clickable="false"/>
+
+            <EditText
+                    android:id="@+id/text_submission_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="false"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

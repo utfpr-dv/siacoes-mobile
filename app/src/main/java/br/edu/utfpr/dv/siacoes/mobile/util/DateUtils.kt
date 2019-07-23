@@ -13,6 +13,14 @@ class DateUtils {
         }
     }
 
+    fun formatTime(date : Date?) : String {
+        if(date == null) {
+            return ""
+        } else {
+            return SimpleDateFormat("HH:mm").format(date)
+        }
+    }
+
     fun formatDateTime(date : Date?) : String {
         if(date == null) {
             return ""

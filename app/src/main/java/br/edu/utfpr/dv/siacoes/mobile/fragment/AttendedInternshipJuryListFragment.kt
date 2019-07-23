@@ -28,6 +28,7 @@ class AttendedInternshipJuryListFragment : Fragment() {
         (activity as BaseActivity).showLoading()
 
         InternshipJuryClient().listByStudent( {
+            internshipJuryList.clear()
             internshipJuryList.addAll(it)
             loadItems()
         }, {

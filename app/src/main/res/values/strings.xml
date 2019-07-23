@@ -35,4 +35,13 @@
     <string name="tab_text_internship2">Estágio</string>
     <string name="tab_text_my_thesis">Meu TCC</string>
     <string name="tab_text_attendance">Reuniões</string>
+    <string name="tab_text_attendance2">Reunião</string>
+    <string name="tab_text_attendance_comments">Orientações</string>
+    <string name="tab_text_attendance_next_meeting">Próx. Atividades</string>
+    <string name="tab_text_proposal">Proposta</string>
+    <string name="tab_text_appraiser_list">Avaliadores</string>
+    <string name="tab_text_project">Projeto</string>
+    <string name="tab_text_project_abstract">Resumo</string>
+    <string name="tab_text_thesis">Monografia</string>
+    <string name="tab_text_thesis_abstract">Resumo</string>
 </resources>

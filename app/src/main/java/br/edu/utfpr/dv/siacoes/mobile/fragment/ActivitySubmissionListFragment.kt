@@ -60,6 +60,7 @@ class ActivitySubmissionListFragment : Fragment() {
         (activity as BaseActivity).showLoading()
 
         ActivitySubmissionClient().list(Session().getIdDepartment(), feedback, {
+            activitySubmissionList.clear()
             activitySubmissionList.addAll(it)
             loadItems()
         }, {

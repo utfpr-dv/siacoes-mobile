@@ -44,7 +44,7 @@ class EditInternshipDataFragment(private val internship: Internship) : Fragment(
         selectSupervisor()
     }
 
-    fun selectCompany() {
+    private fun selectCompany() {
         CompanyClient().list({
             SpinnerUtils().loadSpinnerCompany(this.context!!, activity?.findViewById<Spinner>(R.id.spinner_company)!!, it, internship.company)
 
@@ -55,7 +55,7 @@ class EditInternshipDataFragment(private val internship: Internship) : Fragment(
         })
     }
 
-    fun selectCompanySupervisor() {
+    private fun selectCompanySupervisor() {
         UserClient().listCompanySupervisors((activity?.findViewById<Spinner>(R.id.spinner_company)?.selectedItem as Company).idCompany, {
             SpinnerUtils().loadSpinnerUser(this.context!!, activity?.findViewById<Spinner>(R.id.spinner_company_supervisor)!!, it, internship.companySupervisor)
 
@@ -66,7 +66,7 @@ class EditInternshipDataFragment(private val internship: Internship) : Fragment(
         })
     }
 
-    fun selectSupervisor() {
+    private fun selectSupervisor() {
         UserClient().listSupervisors(Session().getIdDepartment(), Module.SystemModule.SIGES.value, {
             SpinnerUtils().loadSpinnerUser(this.context!!, activity?.findViewById<Spinner>(R.id.spinner_supervisor)!!, it, internship.supervisor)
 

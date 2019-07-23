@@ -17,7 +17,7 @@ class Thesis : Serializable {
     var semester: Int = 0
     var year: Int = 0
     var submissionDate: Date? = null
-    var thesisAbstract: String = ""
+    var abstract: String = ""
     var file: ByteArray? = null
 
 }

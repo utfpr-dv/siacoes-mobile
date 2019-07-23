@@ -53,6 +53,42 @@
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
+                android:name=".activity.EditAttendanceActivity"
+                android:label="@string/app_name"
+                android:excludeFromRecents="true"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".activity.EditProposalActivity"
+                android:label="@string/app_name"
+                android:excludeFromRecents="true"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".activity.EditProjectActivity"
+                android:label="@string/app_name"
+                android:excludeFromRecents="true"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".activity.EditThesisActivity"
+                android:label="@string/app_name"
+                android:excludeFromRecents="true"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".activity.EditFinalDocumentActivity"
+                android:label="@string/app_name"
+                android:excludeFromRecents="true"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".activity.EditSupervisorRegisterActivity"
+                android:label="@string/app_name"
+                android:excludeFromRecents="true"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
                 android:name=".activity.AttendedJuryActivity"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar">

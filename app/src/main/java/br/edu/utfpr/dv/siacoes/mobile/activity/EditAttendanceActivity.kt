@@ -5,21 +5,21 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
 import br.edu.utfpr.dv.siacoes.mobile.R
-import br.edu.utfpr.dv.siacoes.mobile.adapter.EditActivitySubmissionAdapter
-import br.edu.utfpr.dv.siacoes.mobile.model.ActivitySubmission
+import br.edu.utfpr.dv.siacoes.mobile.adapter.EditAttendanceAdapter
+import br.edu.utfpr.dv.siacoes.mobile.model.Attendance
 import com.google.android.material.tabs.TabLayout
 
-class EditActivitySubmissionActivity : BaseActivity("Atividade Submetida",true, true, false, null) {
+class EditAttendanceActivity : BaseActivity("Registro de Reunião",true, true, false, null) {
 
-    private var activitySubmission : ActivitySubmission? = null
+    private var attendance : Attendance? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_activity_submission)
-        val a = intent.getSerializableExtra("activitySubmission") as ActivitySubmission
-        activitySubmission = a
+        val a = intent.getSerializableExtra("attendance") as Attendance
+        attendance = a
 
-        val sectionsPagerAdapter = EditActivitySubmissionAdapter(a,this, supportFragmentManager)
+        val sectionsPagerAdapter = EditAttendanceAdapter(a,this, supportFragmentManager)
         val viewPager: ViewPager = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
         findViewById<TabLayout>(R.id.tabs).setupWithViewPager(viewPager)

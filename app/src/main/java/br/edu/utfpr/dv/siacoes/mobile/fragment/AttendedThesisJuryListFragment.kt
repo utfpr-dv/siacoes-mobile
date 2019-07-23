@@ -28,6 +28,7 @@ class AttendedThesisJuryListFragment : Fragment() {
         (activity as BaseActivity).showLoading()
 
         JuryClient().listByStudent( {
+            juryList.clear()
             juryList.addAll(it)
             loadItems()
         }, {

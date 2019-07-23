@@ -10,7 +10,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="?android:attr/selectableItemBackground" android:id="@+id/layout_register">
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/layout_register"
+            android:clickable="true">
 
         <ImageView
                 android:layout_width="72dp"

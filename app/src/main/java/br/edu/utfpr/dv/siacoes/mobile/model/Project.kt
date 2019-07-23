@@ -17,7 +17,7 @@ class Project : Serializable {
     var semester: Int = 0
     var year: Int = 0
     var submissionDate: Date? = null
-    var projectAbstract: String = ""
+    var abstract: String = ""
     var file: ByteArray? = null
 
 }
