@@ -15,8 +15,6 @@ class RetrofitInitializer {
         .addInterceptor(ServiceInterceptor())
         .build()
 
-    //var objectMapper = Jackson2ObjectMapperBuilder.json().failOnUnknownProperties(false).build()
-
     private val retrofit = Retrofit.Builder()
             .baseUrl("https://coensapp.dv.utfpr.edu.br/siacoes/service/")
             .client(client)
@@ -25,6 +23,14 @@ class RetrofitInitializer {
             .build()
 
     fun loginService(): LoginService = retrofit.create(LoginService::class.java)
+
+    fun applicationService() : ApplicationService = retrofit.create(ApplicationService::class.java)
+
+    fun sigacService() : SigacService = retrofit.create(SigacService::class.java)
+
+    fun sigesService() : SigesService = retrofit.create(SigesService::class.java)
+
+    fun sigetService() : SigetService = retrofit.create(SigetService::class.java)
 
     fun userService(): UserService = retrofit.create(UserService::class.java)
 
@@ -37,5 +43,19 @@ class RetrofitInitializer {
     fun companyService(): CompanyService = retrofit.create(CompanyService::class.java)
 
     fun internshipService(): InternshipService = retrofit.create(InternshipService::class.java)
+
+    fun juryService() : JuryService = retrofit.create(JuryService::class.java)
+
+    fun internshipJuryService() : InternshipJuryService = retrofit.create(InternshipJuryService::class.java)
+
+    fun attendanceService() : AttendanceService = retrofit.create(AttendanceService::class.java)
+
+    fun proposalService() : ProposalService = retrofit.create(ProposalService::class.java)
+
+    fun projectService() : ProjectService = retrofit.create(ProjectService::class.java)
+
+    fun thesisService() : ThesisService = retrofit.create(ThesisService::class.java)
+
+    fun finalDocument() : FinalDocumentService = retrofit.create(FinalDocumentService::class.java)
 
 }

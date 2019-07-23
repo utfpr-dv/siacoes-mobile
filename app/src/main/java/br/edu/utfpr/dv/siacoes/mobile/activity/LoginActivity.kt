@@ -38,10 +38,10 @@ class LoginActivity : AppCompatActivity() {
                 saveLoginData(credential)
             }
 
-            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
-            ActivityCompat.finishAffinity(this@LoginActivity)
+            ActivityCompat.finishAffinity(this)
         }, {
             Session().setAccessToken("")
             showLoginFailed()
@@ -68,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
     private fun showLoginFailed() {
         findViewById<ProgressBar>(R.id.loading).visibility = View.GONE
 
-        val builder = AlertDialog.Builder(this@LoginActivity)
+        val builder = AlertDialog.Builder(this)
         builder.setTitle("Erro de Login")
         builder.setMessage("Usuário ou senha incorretos.")
         builder.setNeutralButton("OK"){_,_ ->

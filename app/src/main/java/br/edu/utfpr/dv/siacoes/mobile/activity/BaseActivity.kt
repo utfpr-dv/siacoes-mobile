@@ -1,6 +1,7 @@
 package br.edu.utfpr.dv.siacoes.mobile.activity
 
 import android.app.ActivityOptions
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
@@ -225,24 +226,43 @@ abstract class BaseActivity(val subtitle : String?, val hideMenu : Boolean, val 
         if(Session().getProfile() == null) {
             UserClient().listProfiles({
                 val profiles : List<User.UserProfile> = it
+                var found = false
 
                 for(p in profiles) {
                     if(p == User.UserProfile.STUDENT) {
                         Session().setProfile(p)
+                        found = true
                     }
                 }
 
-                findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserProfile)?.text = Session().getProfile().toString()
-                this.configureDepartment()
+                if(!found) {
+                    profileFailed()
+                } else {
+                    findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserProfile)?.text = Session().getProfile().toString()
+                    this.configureDepartment()
+                }
             }, {
-                Session().setProfile(User.UserProfile.STUDENT)
-                findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserProfile)?.text = Session().getProfile().toString()
-                this.configureDepartment()
+                profileFailed()
             })
         } else {
-            findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserProfile)?.text = Session().getProfile().toString()
-            this.configureDepartment()
+            profileFailed()
         }
+    }
+
+    private fun profileFailed() {
+        this.hideLoading()
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Erro de Login")
+        builder.setMessage("O aplicativo mobile está disponível apenas para acadêmicos.")
+        builder.setNeutralButton("OK"){_,_ ->
+            val intent = Intent(this, LoginActivity::class.java)
+            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+            ActivityCompat.finishAffinity(this)
+        }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
     private fun configureDepartment() {

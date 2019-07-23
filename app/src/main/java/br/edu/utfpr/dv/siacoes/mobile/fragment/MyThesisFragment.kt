@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Space
 import androidx.fragment.app.Fragment
 import br.edu.utfpr.dv.siacoes.mobile.R
 import br.edu.utfpr.dv.siacoes.mobile.Session
@@ -29,11 +30,15 @@ class MyThesisFragment : Fragment() {
         if(!Session().getSigetConfig()?.registerProposal!!) {
             activity?.findViewById<LinearLayout>(R.id.layout_proposal)?.visibility = View.GONE
             activity?.findViewById<View>(R.id.view_proposal)?.visibility = View.GONE
+            activity?.findViewById<Space>(R.id.space_proposal_1)?.visibility = View.GONE
+            activity?.findViewById<Space>(R.id.space_proposal_2)?.visibility = View.GONE
         }
 
         if(!Session().getSigetConfig()?.requestFinalDocumentStage1!!) {
             activity?.findViewById<LinearLayout>(R.id.layout_final_project)?.visibility = View.GONE
             activity?.findViewById<View>(R.id.view_final_project)?.visibility = View.GONE
+            activity?.findViewById<Space>(R.id.space_final_project_1)?.visibility = View.GONE
+            activity?.findViewById<Space>(R.id.space_final_project_2)?.visibility = View.GONE
         }
 
         activity?.findViewById<LinearLayout>(R.id.layout_register)?.setOnClickListener{
