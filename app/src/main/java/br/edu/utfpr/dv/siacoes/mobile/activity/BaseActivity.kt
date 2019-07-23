@@ -245,7 +245,8 @@ abstract class BaseActivity(val subtitle : String?, val hideMenu : Boolean, val 
                 profileFailed()
             })
         } else {
-            profileFailed()
+            findViewById<NavigationView>(R.id.nav_view).getHeaderView(0).findViewById<TextView>(R.id.navUserProfile)?.text = Session().getProfile().toString()
+            this.configureDepartment()
         }
     }
 
