@@ -79,7 +79,7 @@
                     android:labelFor="@id/text_year"/>
 
             <TextView
-                    android:text="Data de Registro"
+                    android:text="Data de Submissão"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:labelFor="@id/text_submission_date"/>

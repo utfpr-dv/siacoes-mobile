@@ -44,4 +44,8 @@
     <string name="tab_text_project_abstract">Resumo</string>
     <string name="tab_text_thesis">Monografia</string>
     <string name="tab_text_thesis_abstract">Resumo</string>
+    <string name="tab_text_final_document_data">Submissão</string>
+    <string name="tab_text_final_document_abstract">Resumo</string>
+    <string name="tab_text_final_document_abstract2">Abstract</string>
+    <string name="tab_text_final_document_comments">Observações</string>
 </resources>

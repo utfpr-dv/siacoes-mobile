@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import br.edu.utfpr.dv.siacoes.mobile.R
 import br.edu.utfpr.dv.siacoes.mobile.Session
 import br.edu.utfpr.dv.siacoes.mobile.activity.*
+import br.edu.utfpr.dv.siacoes.mobile.client.FinalDocumentClient
 import br.edu.utfpr.dv.siacoes.mobile.client.ProjectClient
 import br.edu.utfpr.dv.siacoes.mobile.client.ProposalClient
 import br.edu.utfpr.dv.siacoes.mobile.client.ThesisClient
@@ -50,6 +51,14 @@ class MyThesisFragment : Fragment() {
         activity?.findViewById<LinearLayout>(R.id.layout_thesis)?.setOnClickListener{
             clickThesis(activity?.findViewById<LinearLayout>(R.id.layout_thesis)!!)
         }
+
+        activity?.findViewById<LinearLayout>(R.id.layout_final_project)?.setOnClickListener{
+            clickFinalProject(activity?.findViewById<LinearLayout>(R.id.layout_final_project)!!)
+        }
+
+        activity?.findViewById<LinearLayout>(R.id.layout_final_thesis)?.setOnClickListener{
+            clickFinalThesis(activity?.findViewById<LinearLayout>(R.id.layout_final_thesis)!!)
+        }
     }
 
     private fun clickSupervisorRegister(view: View) {
@@ -85,6 +94,17 @@ class MyThesisFragment : Fragment() {
         })
     }
 
+    private fun clickFinalProject(view: View) {
+        FinalDocumentClient().find(Session().getIdDepartment(), 1, {
+            val intent = Intent(this.context, EditFinalDocumentActivity::class.java)
+            intent.putExtra("finalDocument", it)
+            startActivityForResult(intent, 0, ActivityOptions.makeSceneTransitionAnimation(activity).toBundle())
+        }, {
+            Snackbar.make(view, "Não foi possível carregar a versão final do Projeto de TCC 1.", Snackbar.LENGTH_LONG).show()
+
+        })
+    }
+
     private fun clickThesis(view: View) {
         ThesisClient().findCurrent(Session().getIdDepartment(), {
             val intent = Intent(this.context, EditThesisActivity::class.java)
@@ -92,6 +112,17 @@ class MyThesisFragment : Fragment() {
             startActivityForResult(intent, 0, ActivityOptions.makeSceneTransitionAnimation(activity).toBundle())
         }, {
             Snackbar.make(view, "Não foi possível carregar a Monografia de TCC 2.", Snackbar.LENGTH_LONG).show()
+
+        })
+    }
+
+    private fun clickFinalThesis(view: View) {
+        FinalDocumentClient().find(Session().getIdDepartment(), 2, {
+            val intent = Intent(this.context, EditFinalDocumentActivity::class.java)
+            intent.putExtra("finalDocument", it)
+            startActivityForResult(intent, 0, ActivityOptions.makeSceneTransitionAnimation(activity).toBundle())
+        }, {
+            Snackbar.make(view, "Não foi possível carregar a versão final da Monografia de TCC 2.", Snackbar.LENGTH_LONG).show()
 
         })
     }

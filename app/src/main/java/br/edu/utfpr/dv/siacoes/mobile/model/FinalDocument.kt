@@ -36,5 +36,7 @@ class FinalDocument : Serializable {
     var comments: String = ""
     var nativeAbstract: String = ""
     var englishAbstract: String = ""
+    var semester: Int = 0
+    var year: Int = 0
 
 }

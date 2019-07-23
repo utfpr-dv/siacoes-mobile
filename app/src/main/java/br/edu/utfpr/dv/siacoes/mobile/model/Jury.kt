@@ -38,5 +38,7 @@ class Jury : Serializable {
     var minimumScore: Double = 0.toDouble()
     var supervisorAbsenceReason: String = ""
     var supervisorAssignsGrades: Boolean = false
+    var student: User? = null
+    var stage: Int = 0
 
 }

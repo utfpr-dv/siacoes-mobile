@@ -24,7 +24,7 @@ class AttendedInternshipJuryListAdapter(private val items: MutableList<Internshi
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.attended_jury_list_item, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.attended_internship_jury_list_item, parent, false)
         return ViewHolder(view)
     }
 

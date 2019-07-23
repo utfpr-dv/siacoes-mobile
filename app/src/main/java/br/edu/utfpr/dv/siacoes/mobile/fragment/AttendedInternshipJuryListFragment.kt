@@ -19,7 +19,7 @@ class AttendedInternshipJuryListFragment : Fragment() {
     private val internshipJuryList: MutableList<InternshipJury> = mutableListOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_attended_jury_list, container, false)
+        return inflater.inflate(R.layout.fragment_attended_internship_jury_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,7 +38,7 @@ class AttendedInternshipJuryListFragment : Fragment() {
     }
 
     private fun loadItems() {
-        val recyclerView = activity?.findViewById<RecyclerView>(R.id.attended_jury_list_recyclerview)
+        val recyclerView = activity?.findViewById<RecyclerView>(R.id.attended_internship_jury_list_recyclerview)
 
         recyclerView?.adapter = AttendedInternshipJuryListAdapter(internshipJuryList, this.context!!)
 

@@ -8,5 +8,6 @@ class Credential : Serializable {
 
     var login : String = ""
     var password : String = ""
+    var device : String = ""
 
 }

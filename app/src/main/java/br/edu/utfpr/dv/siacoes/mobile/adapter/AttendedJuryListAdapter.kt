@@ -35,8 +35,9 @@ class AttendedJuryListAdapter(private val items: MutableList<Jury>, private val 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindView(item : Jury) {
-            itemView.findViewById<TextView>(R.id.item_student).text = "Acadêmico: " + item.comments
+            itemView.findViewById<TextView>(R.id.item_student).text = "Acadêmico: " + item.student?.name
             itemView.findViewById<TextView>(R.id.item_date).text = "Data/Hora: " + DateUtils().formatDateTime(item.date)
+            itemView.findViewById<TextView>(R.id.item_stage).text = "TCC " + item.stage.toString()
         }
 
     }
